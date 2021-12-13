@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float xRange;
     public float yRange;
+    public GameObject Pickup;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +24,13 @@ public class PlayerController : MonoBehaviour
 
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
         transform.Translate(movement * speed * Time.deltaTime);
-
-      
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Pickup"))
+        {
+            Destroy(other.gameObject);
         }
-    
+    }
+
 }
