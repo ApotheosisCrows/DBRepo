@@ -31,6 +31,16 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+<<<<<<< Updated upstream
     }
 
+=======
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Pickup"))
+        {
+            Destroy(other.gameObject);
+        }
+    }
+>>>>>>> Stashed changes
 }
